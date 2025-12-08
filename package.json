@@ -4,7 +4,7 @@
 	"description": "Frontend Mentor solution to the Base Apparel coming soon page challenge",
 	"scripts": {
 		"deploy": "gh-pages -d",
-		"test": "xo && stylelint assets/css/style.css",
+		"test": "xo && stylelint assets/css/style.css"
 	},
 	"author": "Joshua Wenning",
 	"private": true,
