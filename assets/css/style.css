@@ -169,7 +169,7 @@ main {
 	.photo {
 		img,
 		source {
-			height: 100%;
+			height: 100vh;
 			object-fit: cover;
 		}
 	}
@@ -185,6 +185,10 @@ main {
 }
 
 @media (min-width: 1080px) {
+	body {
+		grid-template-columns: 1fr auto;
+	}
+
 	.masthead,
 	main {
 		padding: 4rem;
