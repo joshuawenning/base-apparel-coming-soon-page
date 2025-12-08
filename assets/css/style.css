@@ -114,8 +114,13 @@ main {
 	font-family: var(--font-primary);
 	font-size: 1rem;
 	height: 3rem;
-	padding: 1rem 1.5rem;
+	padding: 1rem 3.5rem 1rem 1.5rem;
 	vertical-align: bottom;
+
+	&:focus {
+		border-width: 2px;
+		outline: none;
+	}
 }
 
 .btn {
@@ -128,4 +133,10 @@ main {
 	padding: 1rem 1.75rem;
 	vertical-align: bottom;
 	vertical-align: middle;
+
+	&:focus,
+	&:hover {
+		box-shadow: .25rem .75rem 2rem rgba(0, 0, 0, .25);
+		outline: none;
+	}
 }
