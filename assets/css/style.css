@@ -69,8 +69,7 @@ img {
 	height: 33px;
 	width: 158px;
 
-	&:focus,
-	&:hover {
+	&:focus {
 		outline: 1px solid var(--pink-400);
 	}
 }
@@ -111,6 +110,8 @@ main {
 }
 
 .form-group {
+	padding-left: 2rem;
+	padding-right: 2rem;
 	text-align: center;
 }
 
@@ -148,9 +149,48 @@ main {
 	}
 }
 
-@media (min-width: 750px) {
-	.grid {
-		display: flex;
-		flex-direction: row-reverse;
+@media (min-width: 800px) {
+	body {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: 100vh;
+	}
+
+	.masthead,
+	main {
+		grid-column: 1; /* Left column */
+	}
+
+	.photo {
+		grid-column: 2; /* Right column */
+		grid-row: 1 / span 2; /* Make it span full height */
+	}
+
+	.photo {
+		img,
+		source {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.intro,
+	.form-group {
+		text-align: left;
+	}
+
+	.intro p {
+		max-width: 28em;
+	}
+}
+
+@media (min-width: 1080px) {
+	.masthead,
+	main {
+		padding: 4rem;
+	}
+
+	.intro__title {
+		font-size: 4rem;
 	}
 }
