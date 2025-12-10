@@ -29,18 +29,27 @@
 			<p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
 		</div>
 
-		<form class="form-group">
+		<form class="form-group form-group--error">
 			<input
 				class="input"
 				maxlength="64"
 				placeholder="Email Address"
 				required
 				type="email">
-			<button class="btn btn--submit">
+			<span class="form-group__error-icon" aria-hidden="true">
+				<svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+					<g fill="none" fill-rule="evenodd">
+						<circle fill="#F96464" r="12" cx="12" cy="12"/>
+						<path fill="#FFF" fill-rule="nonzero" d="M13.256 6v9.056h-2V6h2zm-.944 12.464c-.384 0-.699-.104-.944-.312a1.027 1.027 0 0 1-.368-.824c0-.33.125-.608.376-.832.25-.224.563-.336.936-.336.373 0 .68.112.92.336.24.224.36.501.36.832 0 .341-.117.616-.352.824-.235.208-.544.312-.928.312z"/>
+					</g>
+				</svg>
+			</span>
+			<button class="btn">
 				<svg height="20" width="12" xmlns="http://www.w3.org/2000/svg">
 					<path fill="none" stroke="#fff" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/>
 				</svg>
 			</button>
+			<p class="form__error-message" aria-live="polite">Please provide a valid email.</p>
 		</form>
 	</main>
 	<script src="assets/js/main.js"></script>

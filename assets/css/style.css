@@ -113,9 +113,37 @@ main {
 }
 
 .form-group {
+	max-width: 400px;
 	padding-left: 2rem;
 	padding-right: 2rem;
+	position: relative;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-group__error-icon {
+	left: 16rem;
+	position: absolute;
+	top: .75rem;
+}
+
+.form__error-message {
+	color: var(--red-500);
+	padding-left: 1.5rem;
+	text-align: left;
+	padding-top: 1rem;
+}
+
+.form-group--error {
+	.input {
+		border-color: var(--red-500);
+		border-width: 2px;
+	}
+
+	.btn {
+		box-shadow: .25rem .75rem 2rem rgba(0, 0, 0, .25);
+	}
 }
 
 .input {
@@ -144,11 +172,12 @@ main {
 	border: 0;
 	cursor: pointer;
 	height: 3rem;
-	margin-left: -3rem;
+	left: 18rem;
 	padding: 1rem 1.75rem;
+	position: absolute;
+	transition: box-shadow .125s ease-in-out;
 	vertical-align: bottom;
 	vertical-align: middle;
-	transition: box-shadow .125s ease-in-out;
 
 	&:focus,
 	&:hover {
@@ -212,6 +241,10 @@ main {
 	.intro p {
 		max-width: 28em;
 	}
+
+	.form-group {
+		max-width: none;
+	}
 }
 
 @media (min-width: 1080px) {
@@ -230,5 +263,10 @@ main {
 
 	.intro__title {
 		font-size: 4rem;
+	}
+
+	.btn {
+		padding-left: 2.25rem;
+		padding-right: 2.25rem;
 	}
 }
