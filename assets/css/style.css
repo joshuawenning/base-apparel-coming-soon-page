@@ -123,12 +123,14 @@ main {
 }
 
 .form-group__error-icon {
+	display: none;
 	left: 16rem;
 	position: absolute;
 	top: .75rem;
 }
 
-.form__error-message {
+.form-group__error-message {
+	display: none;
 	color: var(--red-500);
 	padding-left: 1.5rem;
 	text-align: left;
@@ -143,6 +145,11 @@ main {
 
 	.btn {
 		box-shadow: .25rem .75rem 2rem rgba(0, 0, 0, .25);
+	}
+
+	.form-group__error-icon,
+	.form-group__error-message {
+		display: block;
 	}
 }
 
