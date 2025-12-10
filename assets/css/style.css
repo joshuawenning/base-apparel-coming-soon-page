@@ -163,7 +163,7 @@ main {
 
 	.photo {
 		grid-column: 2; /* Right column */
-		grid-row: 1 / span 2; /* Make it span full height */
+		grid-row: 1 / span 2; /* Span full height */
 	}
 
 	.photo {
