@@ -149,6 +149,15 @@ main {
 	}
 }
 
+@media (min-width: 720px) {
+	.photo img {
+		height: 540px;
+		object-fit: cover;
+		object-position: 50% 15%;
+		width: 100%;
+	}
+}
+
 @media (min-width: 800px) {
 	body {
 		display: grid;
@@ -179,6 +188,10 @@ main {
 		text-align: left;
 	}
 
+	.intro {
+		padding-top: 0;
+	}
+
 	.intro p {
 		max-width: 28em;
 	}
@@ -189,9 +202,13 @@ main {
 		grid-template-columns: 1fr auto;
 	}
 
+	.masthead {
+		width: 512px; /* 1. Match `main` width for left alignment */
+	}
+
 	.masthead,
 	main {
-		padding: 4rem;
+		justify-self: center; /* 1 */
 	}
 
 	.intro__title {
