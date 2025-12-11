@@ -1,22 +1,24 @@
 :root {
-	--gray-900: hsl(0, 6%, 24%);
-	--pink-200: hsl(0, 30%, 80%);
-	--pink-400: hsl(0, 36%, 70%);
-	--red-500: hsl(0, 93%, 68%);
+	--gray-900: hsl(0deg 6% 24%);
+	--pink-200: hsl(0deg 30% 80%);
+	--pink-400: hsl(0deg 36% 70%);
+	--red-500: hsl(0deg 93% 68%);
 
-	--surface-gradient: linear-gradient(
-		135deg,
-		hsl(0, 0%, 100%),
-		hsl(0, 100%, 98%)
-	);
+	--surface-gradient:
+		linear-gradient(
+			135deg,
+			hsl(0deg 0% 100%),
+			hsl(0deg 100% 98%)
+		);
 
-	--accent-gradient: linear-gradient(
-		135deg,
-		hsl(0, 80%, 86%),
-		hsl(0, 74%, 74%)
-	);
+	--accent-gradient:
+		linear-gradient(
+			135deg,
+			hsl(0deg 80% 86%),
+			hsl(0deg 74% 74%)
+		);
 
-	--font-primary: "Josefin Sans", sans-serif;
+	--font-primary: 'Josefin Sans', sans-serif;
 }
 
 *,
@@ -39,14 +41,14 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 400;
+	font-weight: normal;
 	line-height: 1;
 	margin: 0;
 }
 
 p {
 	color: var(--pink-400);
-	font-weight: 400;
+	font-weight: normal;
 	line-height: 1.5;
 	margin: 0;
 }
@@ -62,7 +64,7 @@ img {
 
 /* Image replacement */
 .logo {
-	background-image: url("../images/logo.svg");
+	background-image: url('../images/logo.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -73,13 +75,13 @@ img {
 	&:focus {
 		outline: none;
 		padding: 1rem;
-		box-shadow: 0 0 1rem .25rem rgba(206, 151, 151, .5); /* Soft pink glow */
+		box-shadow: 0 0 1rem 0.25rem rgba(206 151 151 / 50%); /* Soft pink glow */
 	}
 }
 
 /* Visually hidden text */
 .logo__screen-reader-only {
-	border: 0;
+	border: none;
 	clip-path: inset(50%);
 	height: 1px;
 	margin: -1px;
@@ -126,7 +128,7 @@ main {
 	display: none;
 	left: 16rem;
 	position: absolute;
-	top: .75rem;
+	top: 0.75rem;
 }
 
 .form-group__error-message {
@@ -135,22 +137,6 @@ main {
 	padding-left: 1.5rem;
 	text-align: left;
 	padding-top: 1rem;
-}
-
-.form-group--error {
-	.input {
-		border-color: var(--red-500);
-		border-width: 2px;
-	}
-
-	.btn {
-		box-shadow: .25rem .75rem 2rem rgba(0, 0, 0, .25);
-	}
-
-	.form-group__error-icon,
-	.form-group__error-message {
-		display: block;
-	}
 }
 
 .input {
@@ -176,26 +162,40 @@ main {
 .btn {
 	background: var(--accent-gradient);
 	border-radius: 4rem;
-	border: 0;
+	border: none;
 	cursor: pointer;
 	height: 3rem;
 	left: 18rem;
 	padding: 1rem 1.75rem;
 	position: absolute;
-	transition: box-shadow .125s ease-in-out;
-	vertical-align: bottom;
-	vertical-align: middle;
+	transition: box-shadow 0.125s ease-in-out;
 
 	&:focus,
 	&:hover {
-		box-shadow: .25rem .75rem 2rem rgba(0, 0, 0, .25);
+		box-shadow: 0.25rem 0.75rem 2rem rgba(0 0 0 / 25%);
 		outline: none;
+	}
+}
+
+.form-group--error {
+	.input {
+		border-color: var(--red-500);
+		border-width: 2px;
+	}
+
+	.btn {
+		box-shadow: 0.25rem 0.75rem 2rem rgba(0 0 0 / 25%);
+	}
+
+	.form-group__error-icon,
+	.form-group__error-message {
+		display: block;
 	}
 }
 
 @media (min-width: 720px) {
 	body {
-		background-image: url("../images/bg-pattern-desktop.svg");
+		background-image: url('../images/bg-pattern-desktop.svg');
 		background-position: left;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -226,9 +226,7 @@ main {
 	.photo {
 		grid-column: 2; /* Right column */
 		grid-row: 1 / span 2; /* Span full height */
-	}
 
-	.photo {
 		img,
 		source {
 			height: 100vh;
