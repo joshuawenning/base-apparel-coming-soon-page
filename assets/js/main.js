@@ -1,11 +1,11 @@
 /* global document */
 
 document.addEventListener('DOMContentLoaded', () => {
-	let hasSubmitted = false;
-
 	const form = document.querySelector('.form-group');
 	const input = document.querySelector('.input');
 	const errorMessage = document.querySelector('.form-group__error-message');
+
+	let hasSubmitted = false;
 
 	const validateEmail = () => {
 		input.setCustomValidity('');
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		errorMessage.textContent = '';
 	};
 
-	// Update live only after a submit attempt
 	input.addEventListener('input', () => {
 		if (hasSubmitted) {
 			validateEmail();
