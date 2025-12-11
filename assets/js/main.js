@@ -1,12 +1,14 @@
 /* global document */
 
 document.addEventListener('DOMContentLoaded', () => {
-	const formGroup = document.querySelector('.form-group');
+	let hasSubmitted = false;
+
+	const form = document.querySelector('.form-group');
 	const input = document.querySelector('.input');
-	const formErrorMessage = document.querySelector('.form-group__error-message');
+	const errorMessage = document.querySelector('.form-group__error-message');
 
 	const validateEmail = () => {
-		input.setCustomValidity(''); // Clear browser default
+		input.setCustomValidity('');
 
 		if (input.validity.valueMissing) {
 			setError('Please enter your email address.');
@@ -18,20 +20,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const setError = message => {
-		formGroup.classList.add('form-group--error');
-		formErrorMessage.textContent = message;
+		form.classList.add('form-group--error');
+		errorMessage.textContent = message;
 	};
 
 	const clearError = () => {
-		formGroup.classList.remove('form-group--error');
-		formErrorMessage.textContent = '';
+		form.classList.remove('form-group--error');
+		errorMessage.textContent = '';
 	};
 
-	input.addEventListener('input', validateEmail);
-	input.addEventListener('blur', validateEmail);
+	// Update live only after a submit attempt
+	input.addEventListener('input', () => {
+		if (hasSubmitted) {
+			validateEmail();
+		}
+	});
 
-	formGroup.addEventListener('submit', (event) => {
+	input.addEventListener('blur', () => {
+		if (hasSubmitted) {
+			validateEmail();
+		}
+	});
+
+	form.addEventListener('submit', event => {
+		hasSubmitted = true;
 		validateEmail();
+
 		if (!input.checkValidity()) {
 			event.preventDefault();
 		}
