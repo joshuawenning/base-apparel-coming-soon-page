@@ -13,6 +13,9 @@ I chose to build out this project with a vanilla stack&mdash;using simple [npm](
 - [CSS nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting) to group components
 - Modern CSS colors, using space-separated values instead of commas (e.g. `rgb(255 0 0 / 0.5)`)
 
+### Process
+My first step was improving the provided assets, up-scaling the photos by 2X for better resolution (using Adobe Photoshop's AI-powered engine), and creating an appropriate favicon based on the logo. I then wrote out semantic HTML, and created a few CSS custom properties for theming. The brief accounted for reporting two error messages depending on the form submission. These can be handled quite elegantly using the browser's native validation features provided in the HTML. But for custom designed messages, I wrote a simple script that can validate and toggle a class (`.form-group--error`) to show the appropriate errors.
+
 ## Build
 Simply clone the repo `gh repo clone joshuawenning/base-apparel-coming-soon-page` and spin up a local server in the root directory.
 ```
